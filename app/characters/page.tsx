@@ -6,7 +6,7 @@ import { Card } from "../components/card";
 import montogomeryPic from '../../public/images/montgomery.jpg';
 import slPic from '../../public/images/spielleiter.jpg';
 import jellianPic from '../../public/images/jellian.jpg';
-import kordakPic from '../../public/images/kordeg.jpg';
+import kordakPic from '../../public/images/kordak.jpg';
 import meiraPic from '../../public/images/meira.jpg';
 import nallePic from '../../public/images/nalle.jpg';
 
@@ -26,8 +26,8 @@ const socials = [
 	{
 		icon: nallePic,
 		href: "/characters/nalle",
-		label: "Nalle",
-		handle: "Malou",
+		label: "Malou",
+		handle: "Nalle",
 	},
 	{
 		icon: kordakPic,
@@ -59,7 +59,6 @@ export default function Example() {
 						<Card>
 							<Link
 								href={s.href}
-								target="_blank"
 								className="p-4 relative flex flex-col items-center gap-4 duration-700 group md:gap-8 md:py-24  lg:pb-48  md:p-16"
 							>
 								<span

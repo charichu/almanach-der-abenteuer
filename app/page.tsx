@@ -1,11 +1,14 @@
 import Link from "next/link";
 import React from "react";
 import Particles from "./components/particles";
+import { Instagram, Youtube, Twitch, Music2  } from "lucide-react";
 
 const navigation = [
   { name: "Abenteurer", href: "/characters" },
-  { name: "YouTube", href: "https://www.youtube.com/@Almanach_der_Abenteuer" },
-  { name: "Twitch", href: "https://www.twitch.tv/almanach_der_abenteuer" },
+  { name: "Youtube", href: "https://www.youtube.com/@Almanach_der_Abenteuer", icon: <Youtube size={20} /> },
+  { name: "Twitch", href: "https://www.twitch.tv/almanach_der_abenteuer", icon: <Twitch size={20} /> },
+  { name: "Instagram", href: "https://www.instagram.com/almanachderabenteuer", icon: <Instagram size={20} /> },
+  { name: "TikTok", href: "https://www.tiktok.com/@almanach_der_abenteuer", icon: <Music2 size={20} /> },
 ];
 
 export default function Home() {
@@ -19,7 +22,7 @@ export default function Home() {
               href={item.href}
               className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
             >
-              {item.name}
+              {item.icon ? item.icon : item.name}
             </Link>
           ))}
         </ul>

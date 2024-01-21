@@ -2,12 +2,15 @@ import "../global.css";
 import { Inter } from "@next/font/google";
 import LocalFont from "@next/font/local";
 import { Metadata } from "next";
-import { Analytics } from "./components/analytics";
+import Head from 'next/head';
 
 export const metadata: Metadata = {
   title: {
     default: "almanach der abenteuer",
     template: "%s | almanach",
+  },
+  icons: {
+    shortcut: "/favicon.ico",
   },
   robots: {
     index: true,
@@ -38,9 +41,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
-      <head>
-        <Analytics />
-      </head>
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body
         className={`bg-black ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
           }`}

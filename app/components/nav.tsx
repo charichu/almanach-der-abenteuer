@@ -1,7 +1,9 @@
 "use client";
-import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
+import { ArrowLeft, Instagram, Youtube, Twitch, Music2  } from "lucide-react";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+
 
 export const Navigation: React.FC = () => {
 	const ref = useRef<HTMLElement>(null);
@@ -17,6 +19,7 @@ export const Navigation: React.FC = () => {
 		return () => observer.disconnect();
 	}, []);
 
+	const router = useRouter();
 	return (
 		<header ref={ref}>
 			<div
@@ -27,27 +30,32 @@ export const Navigation: React.FC = () => {
 				}`}
 			>
 				<div className="container flex flex-row-reverse items-center justify-between p-6 mx-auto">
-					<div className="flex justify-between gap-8">
-						{/*<Link
-							href="/projects"
-							className="duration-200 text-zinc-400 hover:text-zinc-100"
+					<div className="flex justify-between gap-4 duration-200 text-zinc-300 hover:text-zinc-100">
+						<Link 
+						 href="https://www.twitch.tv/almanach_der_abenteuer"				
 						>
-							Projects
+							<Twitch className="w-6 h-6 " />
 						</Link>
-						<Link
-							href="/contact"
-							className="duration-200 text-zinc-400 hover:text-zinc-100"
+						<Link 
+						 href="https://www.youtube.com/@Almanach_der_Abenteuer"				
 						>
-							Contact
-						</Link>*/}
+							<Youtube className="w-6 h-6 " />
+						</Link>
+						<Link 
+						 href="https://www.youtube.com/@Almanach_der_Abenteuer"				
+						>
+							<Instagram className="w-6 h-6 " />
+						</Link>
+						<Link 
+						 href="https://www.instagram.com/almanachderabenteuer"				
+						>
+							<Music2 className="w-6 h-6 " />
+						</Link>
 					</div>
 
-					<Link
-						href="/"
-						className="duration-200 text-zinc-300 hover:text-zinc-100"
-					>
+					<div className="duration-200 text-zinc-300 hover:text-zinc-100" onClick={() => router.back()}>
 						<ArrowLeft className="w-6 h-6 " />
-					</Link>
+					</div>
 				</div>
 			</div>
 		</header>
