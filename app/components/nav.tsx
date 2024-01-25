@@ -3,6 +3,7 @@ import { ArrowLeft, Instagram, Youtube, Twitch, Music2  } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from 'next/image';
 
 
 export const Navigation: React.FC = () => {
@@ -30,7 +31,7 @@ export const Navigation: React.FC = () => {
 				}`}
 			>
 				<div className="container flex flex-row-reverse items-center justify-between p-6 mx-auto">
-					<div className="flex justify-between gap-4 duration-200 text-zinc-300 hover:text-zinc-100">
+					<div className="flex justify-between gap-4 duration-200 text-white">
 						<Link 
 						 href="https://www.twitch.tv/almanach_der_abenteuer"				
 						>
@@ -50,6 +51,16 @@ export const Navigation: React.FC = () => {
 						 href="https://www.instagram.com/almanachderabenteuer"				
 						>
 							<Music2 className="w-6 h-6 " />
+						</Link>
+						<Link 
+						 href="https://discord.com/invite/qHYp4GU6"				
+						>
+							<Image src="/images/discord.png" width={24} height={24} alt="Spotify" />
+						</Link>
+						<Link 
+						 href="https://open.spotify.com/show/0zTnEHAwamoBHCw1b7vidi"				
+						>
+							<Image src="/images/spotify.png" width={24} height={24} alt="Discord" />
 						</Link>
 					</div>
 
